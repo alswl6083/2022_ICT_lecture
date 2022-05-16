@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>수정ㅣ인스타그램</title>
+    <link rel="stylesheet" href="resources/css/common.css">
+    <link rel="stylesheet" href="resources/css/fonts.css">
+    <link rel="stylesheet" href="resources/css/edit.css">
+    <script src="https://code.jquery.com/jquery-3.6.0.js"
+        integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk=" crossorigin="anonymous"></script>
+    <script src="resources/js/jquery-3.4.1.min.js"></script>
+    <script>
+        $(document).ready(function () {
+
+            $('.logout-btn').click(function () {
+                $('.logout').toggle();
+            });
+
+        });
+    </script>
+</head>
+
+<body>
+    <header class="header-wrap">
+        <div class="header-layout">
+            <a href="list.html"><img id="logo" class=logo src="resources/images/logo.png"></a>
+            <div class="utill">
+                <a href="create.html"><img src="resources/images/ico-link.png"></a>
+                <div class="pro-img"><img class="profile" src="resources/images/sample.jpg"></div>
+                <a class="logout-btn" href="#">나이키 님</a>
+            </div>
+            <div class="logout">로그아웃</div>
+        </div>
+        
+    </header>
+
+    <div class="create-wrap">
+           <div class="layout">
+            <img src="resources/images/sample.jpg" class="profile small">
+            <p class="nike">nike</p>
+            <div class="sujang">곧 수정될 글입니다.곧 수정될 글입니다.곧 수정될 글입니다.곧 수정될 글입니다.곧 수정될 글입니다.곧 수정될 글입니다.곧 수정될 글입니다.곧 수정될
+                글입니다.곧 수정될 글입니다.곧 수정될 글입니다.곧 수정될 글입니다.곧 수정될 글입니다.곧 수정될 글입니다.곧 수정될 글입니다.곧 수정될 글입니다.곧 수정될 글입니다.곧 수정될 글입니다.
+            </div>
+
+            <img src="resources/images/sample.jpg" class="profile">
+            </div>
+            <div class="bottom-wrap">
+                    <label class="file" for="file">
+                        <img src="resources/images/fild-upload.png">
+                    </label>
+                    <input type="file" id="file">
+                <div class="btn-wrap">
+                    <a class="btn cancle-btn" href="#">취소</a>
+                    <a class="btn delete-btn" href="#">삭제</a>
+                    <a class="btn confirm-btn" href="#">수정</a>
+                </div>
+            </div>
+    
+    </div>
+    <footer>
+        @2022 Instagram from Meta
+    </footer>
+
+
+</body>
+
+</html>

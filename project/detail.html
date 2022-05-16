@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>상세ㅣ인스타그램</title>
+    <link rel="stylesheet" href="resources/css/common.css">
+    <link rel="stylesheet" href="resources/css/fonts.css">
+    <link rel="stylesheet" href="resources/css/detail.css">
+    <script src="https://code.jquery.com/jquery-3.6.0.js"
+        integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk=" crossorigin="anonymous"></script>
+    <script src="resources/js/jquery-3.4.1.min.js"></script>
+    <script>
+        $(document).ready(function () {
+
+            var black = $('.black-mask');
+            var white = $('.main-modal');
+
+            $('#btnlike').click(function (e) {
+                e.stopPropagation();
+                $(this).toggleClass('active');
+            });
+            $('#main-dot').click(function (e) {
+                e.stopPropagation();
+                black.toggle();
+                white.toggle();
+            });
+
+            $('.can').click(function (e) {
+                e.stopPropagation();
+                black.hide();
+                $('.white-modal').hide();
+            });
+            $('.dap-dot').click(function (e) {
+                e.stopPropagation();
+                black.toggle();
+                $('.mini-modal').toggle();
+            });
+
+
+            $(document).click(function(){
+             
+                black.hide();
+                white.hide();
+                $('.mini-modal').hide();
+            });
+           
+            $('.logout-btn').click(function () {
+                $('.logout').toggle();
+            });
+
+            $('.btn-reply').click(function () {
+                $('.mini-dap').toggle();
+
+            });
+
+            $('#dap-post').click(function () {
+                $('.dap-text').focus();
+
+            });
+
+
+        });
+    </script>
+</head>
+
+<body>
+    <header class="header-wrap">
+        <div class="header-layout">
+            <a href="list.html"><img id="logo" class=logo src="resources/images/logo.png"></a>
+            <div class="utill">
+                <a href="create.html"><img src="resources/images/ico-link.png"></a>
+                <div class="pro-img"><img class="profile" src="resources/images/sample.jpg"></div>
+                <a class="logout-btn" href="#">나이키 님</a>
+            </div>
+            <div class="logout">로그아웃</div>
+        </div>
+        
+    </header>
+    <div class="detail-wrap">
+        <div class="layout">
+            <div class="main-img"><img src="resources/images/sample.jpg"></div>
+
+            <div class="right-wrap">
+                <div class="right-top-wrap">
+                    <div class="small-img"><img src="resources/images/sample.jpg"></div>
+                    <span>nike</span>
+                    <a href="#"><img class="main-dot" id="main-dot" src="resources/images/dot.png"></a>
+
+                </div>
+
+                <div class="dap-wrap">
+                    <div class="small-img"><img src="resources/images/sample.jpg"></div>
+                    
+                    <div class="text-wrap">
+                        <span>nike</span>
+                        나이키나이키나이키나이키나이키나이키나이키나이키나이키나이키나이키나이키나이키나이키나이키나이키
+                        <div class="comment-wrap">
+                            <a href="#" id="dap-post">답글달기</a>
+                            <a href="#" class="dap-dot"><img src="resources/images/dot.png"></a>
+                        </div>
+                    </div>
+                </div>
+                <div class="reply-wrap">
+                    <a href="#" class="btn-reply">답글 보기(1개)</a>
+                    <div class="dap-wrap mini-dap">
+                        <div class="small-img"><img src="resources/images/sample.jpg"></div>
+                        <div class="text-wrap">
+                            <span>nike</span>
+                            나이키나이키나이키나이키나이키나이키나이키나이키나이키나이키나이키나이키나이키나이키나이키나이키
+                            <div class="comment-wrap">
+                                <a href="#" id="dap-post">답글달기</a>
+                                <a href="#" class="dap-dot"><img src="resources/images/dot.png"></a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="dap-wrap mini-dap">
+                        <div class="small-img"><img src="resources/images/sample.jpg"></div>
+                        <div class="text-wrap">
+                            <span>nike</span>
+                            나이키나이키나이키나이키나이키나이키나이키나이키나이키나이키나이키나이키나이키나이키나이키나이키
+                            <div class="comment-wrap">
+                                <a href="#" id="dap-post">답글달기</a>
+                                <a href="#" class="dap-dot"><img src="resources/images/dot.png"></a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="bottom-part">
+                    <div class="like">
+                        <a href="#" id="btnlike" class="like-wrap">
+                            <span class="ico"></span>
+                            좋아요1개
+                        </a>
+                    </div>
+                    <div class="bottom-area">
+                        <img class="comment-img" src="resources/images/comment.png">
+                        <textarea class="dap-text" placeholder="댓글 달기.."></textarea>
+                        <a class="up-btn" href="#">게시</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <footer>
+            @2022 Instagram from Meta
+        </footer>
+    </div>
+    <div class="black-mask"></div>
+    <div class="white-modal main-modal">
+        <a class="btn del" href="#">삭제</a>
+        <a class="btn cnf" href="edit.html">수정</a>
+        <a class="btn can" href="#">취소</a>
+    </div>
+
+    <div class="white-modal mini-modal">
+        <a class="btn del" href="#">삭제</a>
+        <a class="btn can" href="#">취소</a>
+    </div>
+
+ 
+
+</body>
+
+</html>

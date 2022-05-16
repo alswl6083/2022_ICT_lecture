@@ -1,0 +1,308 @@
+@charset "uft-8";
+
+body{
+    background: #fafafa;
+}
+
+/* 상세페이지 헤더 */
+
+.header-wrap{
+    background: #fff;
+    border-bottom: 1px solid #ddd;
+    position: relative;
+}
+
+.header-wrap::after{
+    content: "";
+    display: block;
+    clear: both;
+}
+
+.header-wrap .logo{
+    max-width:100%;
+    margin:15px;
+}
+
+ .pro-img{
+     border-radius: 100%;
+     width: 30px;
+     height: 30px;
+     overflow:hidden;
+     margin-left: 10px;
+ }
+ 
+ .utill{
+    float: right;
+    margin: 27px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    
+}
+
+.logout{
+    width: 150px;
+    height: 30px;
+    border: 1px solid #ddd;
+    display: inline-block;
+    position: absolute;
+    right: -12px;
+    top:72px;
+    background: #fff;
+    display: none;
+    text-align: center;
+}
+
+.header-layout{
+    background: #fff;
+    max-width: 975px;
+    margin: 0px auto;
+    position: relative;
+}
+
+/* //상세페이지 헤더 */
+
+/* 상세페이지 */
+.detail-wrap{
+    position: relative;
+    margin-top: 30px;
+    animation: ani 1s forwards;
+
+    top:30px;
+}
+
+
+.layout{
+    display: flex;
+    border: 1px solid #ddd;
+    max-width: 980px;
+    margin: 0 auto;
+
+}
+
+.right-top-wrap span{
+    color: #000;
+    padding-right: 5px;
+}
+
+
+
+
+.detail-wrap .main-img{
+    max-width: 100%;
+    display: inline-block;
+    background: #0000005e;
+    
+}
+
+.right-wrap{
+    background: #fff;
+    position: relative;
+    width: 600px;
+}
+
+.right-top-wrap{
+    border-bottom: 1px solid #ddd;
+    padding: 10px;
+    position: relative;
+}
+
+.main-dot{
+    position: absolute;
+    right: 20px;
+    top:35%;
+}
+
+
+
+.dap-wrap{
+    margin: 10px;
+    padding:10px;
+}
+
+.small-img{
+    width: 35px;
+    height: 35px;
+    border-radius: 100%;
+    overflow: hidden;
+    display: inline-block;
+    vertical-align: top;
+    margin-right: 5px;
+}
+
+.text-wrap{
+    padding-left: 2px;
+    display: inline-block;
+    font-size: 14px;
+    width: 100%;
+}
+
+.text-wrap span{
+    color: #000;
+    padding-right: 5px;
+    display: inline-block;
+}
+
+
+.btn-reply::before{
+    content: "";
+    width: 30px;
+    height: 1px;
+    background: #8e8e8e;
+    position: absolute;
+    left:30%;
+    top:50%;
+}
+
+.btn-reply{
+    padding-left: 100px;
+    position: relative;
+}
+
+.btn-reply:hover::before{
+    animation: dapreply 0.8s forwards;
+}
+
+#dap-post{
+    display: inline-block;
+    padding-top:3px;
+    }
+
+.dap-wrap .dap-dot{
+    display: inline-block;
+    margin-bottom: 10px;
+
+}
+.like{
+    padding: 10px;
+}
+
+
+.mini-dap{
+    display: none;
+}
+
+.ico{
+    width: 24px;
+    height: 23px;
+    display: inline-block;
+    vertical-align: middle;
+    background: url('../images/like.png');
+}
+
+#btnlike.active .ico{
+    background: url('../images/like-hover.png');
+}
+
+.bottom-area{
+    border-top:1px solid #ddd;
+    padding: 10px;
+ 
+}
+
+.bottom-part{
+    position: absolute;
+    bottom:0;
+    width: 100%;
+}
+
+.comment-img{
+    width: 30px;
+    height: 30px;
+    vertical-align: middle;
+}
+
+
+.dap-text{
+    resize: none;
+    border:none;
+    max-width:100%; 
+    height: 30px;
+    vertical-align: middle;
+}
+.up-btn{
+    color: #0095f6 !important;
+    position:absolute;
+    right: 20px;
+}
+footer {
+    margin: 30px;
+    text-align: center;
+}
+.black-mask{
+    width: 100%;
+    height: 100%;
+    background: #0000005e;
+
+    position: fixed;
+    top:0;
+    left: 0;
+    display: none;
+}
+
+.del{
+    color: red !important;
+}
+
+.white-modal .btn{
+    border: 1px solid #ddd;
+    display: block;
+    text-align: center;
+    padding:10px;
+}
+.white-modal{
+    width:300px;
+    
+    background: #fff;
+    border-radius: 10px;
+    display: none;
+    margin: 0 auto;
+    overflow: hidden;
+
+    position: fixed;
+    z-index: 9;
+    top:30%;
+    right:30%;
+    
+    animation:modal 0.5s forwards;
+}
+@keyframes modal{
+    0%{top:35%;}
+    100%{top:30%;}
+}
+
+@keyframes dapreply{
+    0%{width: 1px;}
+    100%{width:30px;}
+}
+
+@keyframes ani{
+    0%{top:20px; opacity: 0;}
+    100%{top:0; opacity: 1;}
+
+}
+
+@media(max-width:1024px){
+    .layout{
+        display: inline-block;
+        margin:15px;
+    }
+    .right-wrap{
+        width: 100%;
+    }
+    .text-wrap{
+        width: 89%;
+        
+    }
+
+    .dap-wrap{
+        margin: 15px;
+    }
+
+    .bottom-part{
+        position:static;
+    }
+ 
+}
+
+/* //상세페이지 */

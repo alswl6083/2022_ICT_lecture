@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>목록ㅣ인스타그램</title>
+  <link rel="stylesheet" href="resources/css/common.css">
+  <link rel="stylesheet" href="resources/css/fonts.css">
+  <link rel="stylesheet" href="resources/css/list.css">
+  <script src="https://code.jquery.com/jquery-3.6.0.js" integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk="
+    crossorigin="anonymous"></script>
+  <script src="resources/js/jquery-3.4.1.min.js"></script>
+  <script>
+    $(document).ready(function () {
+
+      $('.logout-btn').click(function () {
+        $('.logout').toggle();
+      });
+
+    });
+  </script>
+</head>
+
+<body>
+  <header class="header-wrap">
+    <div class="header-layout">
+        <a href="list.html"><img id="logo" class=logo src="resources/images/logo.png"></a>
+        <div class="utill">
+            <a href="create.html"><img src="resources/images/ico-link.png"></a>
+            <div class="pro-img"><img class="profile" src="resources/images/sample.jpg"></div>
+            <a class="logout-btn" href="#">나이키 님</a>
+        </div>
+        <div class="logout">로그아웃</div>
+    </div>
+    
+</header>
+
+  <div class="wrap">
+    
+    <div class="list-wrap">
+      <div class="list-info">
+        <div class="profile"><img src="resources/images/sample.jpg"></div>
+        <div class="text-wrap">
+          <p class="nike">nike</p>
+          <br>
+          게시물 <b>876</b>
+          <br>
+          <br>
+          나이키 더 현대 서울점
+          <br>
+          MAKE SPORT A DAILY HABIT
+        </div>
+      </div>
+    </div>
+    <ul class="list">
+      <li class="list-width">
+        <a href="detail.html" class="list-sample sample1"><img  src="resources/images/sample.jpg"></a>
+      </li>
+      <li class="list-width">
+        <a href="detail.html" class="list-sample sample2"><img  src="resources/images/sample.jpg"></a>
+      </li>
+      <li class="list-width">
+        <a href="detail.html" class="list-sample sample3"><img  src="resources/images/sample.jpg"></a>
+      </li>
+      <li class="list-width">
+        <a href="detail.html" class="list-sample sample4"><img  src="resources/images/sample.jpg"></a>
+      </li>
+      <li class="list-width">
+        <a href="detail.html" class="list-sample sample5"><img  src="resources/images/sample.jpg"></a>
+      </li>
+      <li class="list-width">
+        <a href="detail.html" class="list-sample sample6"><img  src="resources/images/sample.jpg"></a>
+      </li>
+    </ul>
+  </div>
+
+  <footer>
+    @2022 Instagram from Meta
+  </footer>
+
+
+</body>
+
+</html>

@@ -1,0 +1,171 @@
+@charset "utf-8";
+
+body {
+    background: #fafafa;
+}
+
+
+.header-wrap{
+    background: #fff;
+    border-bottom: 1px solid #ddd;
+    position: relative;
+}
+
+.header-wrap::after{
+    content: "";
+    display: block;
+    clear: both;
+}
+
+.header-wrap .logo{
+    max-width:100%;
+    margin:15px;
+}
+
+ .pro-img{
+     border-radius: 100%;
+     width: 30px;
+     height: 30px;
+     overflow:hidden;
+     margin-left: 10px;
+ }
+ 
+ .utill{
+    float: right;
+    margin: 27px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    
+}
+
+.logout{
+    width: 150px;
+    height: 30px;
+    border: 1px solid #ddd;
+    display: inline-block;
+    position: absolute;
+    right: -12px;
+    top:72px;
+    background: #fff;
+    display: none;
+    text-align: center;
+}
+
+.header-layout{
+    background: #fff;
+    max-width: 975px;
+    margin: 0px auto;
+    position: relative;
+}
+
+
+/* create body */
+
+.create-wrap {
+    background: #fff;
+    margin:50px auto;
+    max-width: 686px;
+    animation: ani 1s forwards;
+
+    position: relative;
+    top:30px;
+}
+.profile {
+    border-radius: 100%;
+    width: 30px;
+    height: 30px;
+    vertical-align: middle;
+}
+
+.layout{
+    padding:15px;
+}
+.nike{
+    color: #000;
+    display: inline-block;
+}
+.text-wrap{
+    margin-top: 10px;
+}
+.texta {
+    width: 100%;
+    min-height: 350px;
+    align-items: center;
+    border: 1px solid #fff;
+    resize: none;
+}
+
+.text-wrap span{
+    position: absolute;left: -9999px;
+overflow: hidden;width: 1px;height: 1px;line-height: 1px;
+font-size: 1px;
+
+}
+
+
+input::file-selector-button {
+    display: none;
+}
+
+.bottom-wrap {
+    border-top: 1px solid #ddd;
+    width: 100%;
+    position:relative;
+
+}
+
+.file-wrap{
+    height: 60px;
+    margin-top: 10px;
+
+}
+
+
+.cancle-btn {
+    background: #dedede;
+    color: black;
+    padding: 8px 15px;
+}
+
+.upload-btn {
+    background: #0193f4;
+    color: #fff !important;
+    padding: 8px 15px;
+}
+
+.btn-wrap{
+    position: absolute;
+    top:15px;
+    right: 0;
+}
+
+
+.btn {
+    border-radius: 5px;
+    text-align: center;
+}
+
+
+footer {
+    margin: 30px;
+    text-align: center;
+}
+
+@keyframes ani{
+    0%{top:20px; opacity: 0;}
+    100%{top:0; opacity: 1;}
+
+}
+
+
+@media(max-width:780px) {
+    .btn-wrap .btn {
+        width: 100%;
+        display: inline-block;
+        margin-bottom: 5px;
+    }
+    .btn-wrap{
+        position: static;
+    }
+}

@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1, user-scalable=no">
+    <link rel="stylesheet" href="resources/css/common.css">
+    <link rel="stylesheet" href="resources/css/practice.css">
+    <link rel="stylesheet" href="resources/css/fonts.css">
+    <link rel="stylesheet" type="text/css" href="resources/css/slick.css"/>
+    <link rel="stylesheet" type="text/css" href="resources/css/slick-theme.css"/>
+
+    <title>연습</title>
+    <!-- js -->
+    <script src="https://code.jquery.com/jquery-3.6.0.js"
+    integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk=" crossorigin="anonymous"></script>
+    <script src="resources/js/jquery-3.4.1.min.js"></script>
+    <script type="text/javascript" src="resources/js/slick.min.js"></script>
+    
+    <script>
+        $(document).ready(function(){
+            $('.your-class').slick({
+               arrow:true,
+               isFinite:true,
+               slidesToshow:1,
+               speed:1000,
+               prevArrow: $('#prev'),
+               nextArrow: $('#next')
+            });
+    });
+    </script>
+
+
+</head>
+
+<body>
+
+
+
+    <div class="your-class">
+        <div><img src="resources/images/sample.jpg"></div>
+        <div>your content</div>
+        <div>your content</div>
+    </div>
+
+    <button type="button" id="prev">이전</button>
+    <button type="button" id="next">다음</button>
+</body>
+
+</html>

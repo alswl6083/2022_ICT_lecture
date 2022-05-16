@@ -1,0 +1,227 @@
+@charset "utf-8";
+
+
+
+.centerbox{
+    background: red;
+    width: 50px;
+    height: 50px;
+    margin: 0 auto;
+}
+
+.floatbox{
+    width: 50px;
+    height: 50px;
+    background: red;
+    float: left;
+    margin: 10px;
+}
+
+.floatbox2{
+    width:50px;
+    height:50px;
+    background: blue;
+    float:right;
+    margin:10px;
+}
+
+.box-wrap::after{
+    content: "";
+    display: block;
+    clear: both;
+}
+
+.box-wrap{
+    background: #000;
+}
+
+.positionbox{
+    border: 1px solid #ddd;
+    width: calc((100% - 50px) / 5);
+    border-radius: 15px;
+    position:relative;
+    color: #000;
+    padding: 30px;
+    margin-right:10px;
+    float:left;
+ 
+}
+
+.cat{
+    background: #2e96ff;
+    border-radius: 10px;
+    color: #fff;
+    width: 60px;
+    height: 20px;
+    position:absolute;
+    top:20px;
+    right: 10px;
+}
+
+.position-wrap::after{
+    content: "";
+    display: block;
+    clear: both;
+
+}
+
+
+
+
+
+
+/* 잡코리아 */
+
+
+
+.job-wrap input{
+    border:2px solid #2e96ff;
+    width: 300px;
+    height: 40px;
+    
+}
+
+
+
+
+.img-box{
+    background: #2e96ff;
+    width: 40px;
+    height: 40px;
+    
+}
+
+.job-wrap .logo-img{
+    width: 100px;
+    margin: 10px;
+}
+
+.job-wrap{
+    display: flex;
+    justify-content: left;
+    align-items: left;
+    margin:30px;
+}
+
+
+
+.jikmu{
+    padding: 10px;
+    width: 140px;
+    height: 40px;
+    border: 1px solid #2e96ff;
+    margin-left:5px;
+    text-align: center;
+}
+
+.sangse{
+    border: 1px solid #ddd;
+    width:90px;
+    height: 40px;
+    padding: 10px;
+    margin-left:5px;
+    text-align: center;
+    
+    
+}
+
+/* 네이버 */
+.header-wrap{
+    display: flex;
+    justify-content: left;
+    align-items: left; 
+    margin: 30px;
+}
+
+.naverlogo{
+    width: 100px;
+}
+
+.input-wrap input{
+    border: 2px solid #19ce60;
+    width: 300px;
+    height: 40px;
+}
+
+.input-wrap{
+    position:relative;
+}
+
+.header-wrap .search-img{
+    width: 40px;
+    height: 40px;
+    background: #19ce60;
+    
+}
+
+.header-wrap .text-img{
+    position: absolute;
+    right:10px;
+    top:7px;
+}
+
+.utill{
+    font-size: 10px;
+    color: #000;
+}
+
+.utill .utill-img1{
+    width: 30px;
+    height: 30px;
+}
+
+.utill .utill-img2{
+    width: 80px;
+}
+
+
+
+
+
+
+
+
+
+
+
+@media(max-width:1024px){
+    .positionbox{
+        border: 1px solid #ddd;
+        width: calc((100% - 30px) / 3);
+        border-radius: 15px;
+        position:relative;
+        color: #000;
+        padding: 30px;
+        margin-right:10px;
+        float:left;
+    }
+}
+
+
+@media(max-width:780px){
+    .positionbox{
+        border: 1px solid #ddd;
+        width: calc((100% - 20px) / 2);
+        border-radius: 15px;
+        position:relative;
+        color: #000;
+        padding: 30px;
+        margin-right:10px;
+        float:left;
+    }
+}
+
+@media(max-width:480px){
+    .positionbox{
+        border: 1px solid #ddd;
+        width: calc(100% - 10px);
+        border-radius: 15px;
+        position:relative;
+        color: rgb(0, 0, 0);
+        padding: 30px;
+        margin-right:10px;
+        float:left;
+    }
+}
+
+
