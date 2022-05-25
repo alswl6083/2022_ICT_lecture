@@ -8,6 +8,7 @@ public class main {
 		
 		Student stu1 = new Student();
 		stu1.serialNum++;
+		
 		System.out.println("인스턴스 생성: " + stu1.serialNum);
 	}
 }
