@@ -1,0 +1,233 @@
+<!DOCTYPE HTML>
+<html lang="ko">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-eqrndv="X-UA-Compatible" content="IE=Edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" />
+    <meta name="format-detection" content="telephone=no" />
+    <title>상세 | 인스타그램</title>
+    <!-- css -->
+    <link rel="stylesheet" href="resources/css/fonts.css">
+    <link rel="stylesheet" href="resources/css/bootstrap.min.css">
+    <link rel="stylesheet" href="resources/css/common.css">
+    <link rel="stylesheet" href="resources/css/main.css">
+
+
+    <!-- JS -->
+    <script type="text/javascript" src="resources/js/jquery-3.4.1.min.js"></script>
+    <script type="text/javascript" src="resources/js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="resources/js/style.js"></script>
+    
+    
+    
+    <script>
+        $(document).ready(function(){
+            //댑글달기 버튼 클릭시 textarea 포커스주기 
+            $('.comment').click(function () {
+                $('#textBox').focus();
+            });
+            
+            // 대댓글보기 클릭시 열고닫힘 토글 
+            $('.btn-reply').click(function () {
+				$('.reply').toggleClass('on');
+            });
+            
+            
+			var modalTarget = $("#modalDel");
+			var modalTarget2 = $("#modalDelComment");
+			var mask = $('.mask');
+			
+			//전체글 삭제 
+            $('#btnDel').click(function (event) {
+				event.stopPropagation(); 
+				modalTarget.toggle();
+				mask.toggle();
+            });
+
+			//답글달기 삭제
+            $('.btn-del-comment').click(function (event) {
+				event.stopPropagation(); 
+				modalTarget2.toggle();
+				mask.toggle();
+            });
+			
+		
+			//모달창 속 취소버큰 클릭시 삭제
+            $('.btn-cancel').click(function() {
+                modalTarget.hide();
+				modalTarget2.hide();
+				mask.hide();
+            });
+			
+			//외부클릭시 닫힘
+			$(document).click(function(){ 
+				modalTarget.hide();
+				modalTarget2.hide();
+				mask.hide();
+			});
+			
+            
+            // 좋아요 클릭시 토글 
+            $('.btn-like').click(function(){
+                $(this).toggleClass('active');
+            });
+			
+			
+  
+            
+        });
+    </script>
+    
+    
+    
+    
+</head>
+
+
+<body>
+	<!--wrap-->
+	<div class="wrap">
+		
+			
+		<!-- header -->
+		<header class="header">
+            <div class="layout">
+                <h1><a href="list.htm"><img src="resources/images/logo.png" alt="인스타그램 로고"></a></h1>
+                <div class="utill-wrap">
+                    <a href="create.htm" class="link"><img src="resources/images/ico-link.png" alt="등록" title="등록페이지 바로가기"></a>
+
+                    <!-- 로그인 전 profile-wrap -->
+                    <!--<div class="profile-wrap">
+                        <a href="#"><img src="resources/images/ico-login.png" alt="로그인 전"></a>
+                    </div> -->
+                    <!--  // 로그인 전 profile-wrap -->
+
+                    <!-- 로그인 후 profile-wrap -->
+                    <div class="profile-wrap dropdown">
+                        <button type="button" class="dropdown-toggle">
+                            <span class="profile"><img src="resources/images/sample.jpg" alt="프로필사진"></span>
+                            <strong>나이키 님</strong>
+                        </button>
+                        <div class="dropdown-menu">
+                            <a class="dropdown-item" href="#">로그아웃</a>
+                        </div>
+                    </div>
+                    <!--  //로그인 후 profile-wrap -->
+
+                </div>
+            </div>
+		</header>
+		<!-- // header -->
+
+
+		<!-- detail-wrap -->
+		<div class="detail-wrap">
+         	<div class="layout">
+          
+				<div class="img-wrap"><img src="resources/images/sample.jpg" alt="신발이미지"></div>
+				
+				<!--right-part-->
+				<div class="right-part">
+				
+					<!--profile-wrap-->
+					<div class="profile-wrap group-top">
+						<div class="profile"><img src="resources/images/sample.jpg" alt="프로필사진"></div>
+						<strong>nike</strong>
+						<a href="#" id="btnDel" class="btn-del"><img src="resources/images/dot.png" alt="삭제버튼"></a>
+					</div>
+					<!-- //profile-wrap-->
+					
+					<!--group-bottom-->
+					<ul class="group-bottom">
+						<li>
+							<div class="profile-wrap">
+								<div class="profile"><img src="resources/images/sample.jpg" alt="프로필사진"></div>
+							</div>
+							<div class="txt"><strong>nike</strong>나이키나이키나이키나이키나이키나이키나이키나이키나이키나이키나이키나이키나이키나이키나이키나이키나이키나이키
+                                <div class="comment-wrap">
+								    <button type="button" class="comment">답글달기</button> 
+                                    <button type="button" class="btn-del btn-del-comment"><img src="resources/images/dot.png" alt="삭제버튼"></button>
+                                </div>
+							</div>
+                            <button type="button" class="btn-reply">답글 보기(1개)</button>
+                            <!--reply-->
+                            <ul class="reply">
+                                <li>
+                                    <div class="profile-wrap">
+                                        <div class="profile"><img src="resources/images/sample.jpg" alt="프로필사진"></div>
+                                    </div>
+                                    <div class="txt"><strong>nike</strong>나이키나이키나이키나이키나이키나이키나이키나이키나이키나이키나이키나이키나이키나이키나이키나이키나이키나이키
+                                        <div class="comment-wrap">
+                                            <button type="button" class="comment">답글달기</button> 
+                                            <button type="button" class="btn-del btn-del-comment"><img src="resources/images/dot.png" alt="삭제버튼"></button>
+                                        </div>
+                                    </div>
+                                </li>
+                                <li>
+                                    <div class="profile-wrap">
+                                        <div class="profile"><img src="resources/images/sample.jpg" alt="프로필사진"></div>
+                                    </div>
+                                    <div class="txt"><strong>nike</strong>나이키나이키나이키나이키나이키나이키나이키나이키나이키나이키나이키나이키나이키나이키나이키나이키나이키나이키
+                                        <div class="comment-wrap">
+                                            <button type="button" class="comment">답글달기</button>
+                                            <button type="button" class="btn-del btn-del-comment"><img src="resources/images/dot.png" alt="삭제버튼"></button>
+                                        </div>
+                                    </div>
+                                </li>
+                            </ul>
+                            <!-- //reply-->
+						</li>
+					</ul>
+					<!-- //group-bottom-->
+					
+					<!--bottom-part-->
+					<div class="bottom-part">
+							<!--like-wrap-->
+                            <button type="button" class="btn-like"><i class="ico-like"></i>좋아요<strong>1개</strong></button>
+							<!-- //like-wrap-->
+
+							<!--form-wrap-->
+							<div class="form-wrap">
+								<img src="resources/images/comment.png" alt="">
+								<textarea placeholder="댓글 달기.." id="textBox"></textarea>
+								<button type="button" class="button">게시</button>
+							</div>
+							<!-- //form-wrap-->
+					</div>
+					<!-- //bottom-part-->
+					
+				</div>
+          		<!-- //right-part-->
+           
+           
+            </div>
+		</div>
+		<!-- // detail-wrap -->
+        
+        <!--modal-del-->
+        <div id="modalDel" class="modal-del">
+            <div class="inner">
+                <a href="#" class="btn txt-red">삭제</a>
+                <a href="edit.htm" class="btn">수정</a>
+                <a href="#" class="btn btn-cancel">취소</a>
+            </div> 
+        </div>
+        <!-- //modal-del-->
+        <!--modal-del-->
+        <div id="modalDelComment" class="modal-del">
+            <div class="inner">
+                <a href="#" class="btn txt-red">삭제</a>
+                <a href="#" class="btn btn-cancel">취소</a>
+            </div> 
+        </div>
+        <!-- //modal-del-->
+        <div class="mask"></div>
+
+
+		<footer>@2022 Instagram from Meta</footer>
+
+	</div>
+	<!-- //wrap-->
+</body>
+</html>

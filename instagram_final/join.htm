@@ -1,0 +1,95 @@
+<!DOCTYPE HTML>
+<html lang="ko">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-eqrndv="X-UA-Compatible" content="IE=Edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" />
+    <meta name="format-detection" content="telephone=no" />
+    <title>회원가입 | 인스타그램</title>
+    <!-- css -->
+    <link rel="stylesheet" href="resources/css/fonts.css">
+    <link rel="stylesheet" href="resources/css/bootstrap.min.css">
+    <link rel="stylesheet" href="resources/css/common.css">
+    <link rel="stylesheet" href="resources/css/main.css">
+
+
+   <!-- JS -->
+    <script type="text/javascript" src="resources/js/jquery-3.4.1.min.js"></script>
+    <script type="text/javascript" src="resources/js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="resources/js/style.js"></script>
+    
+    
+    <script>
+	$( document ).ready(function() {
+		//파일 업로드 미리보기 
+		function readURL(input) {
+				if (input.files && input.files[0]) {
+						var reader = new FileReader();            
+						reader.onload = function (e) {
+								$('#holder').show();
+								$('#holder').append('<img src="' + e.target.result + '">');
+                                $('.file-group').hide();
+						}
+						reader.readAsDataURL(input.files[0]);
+				}
+			}
+			$("input:file").change(function(){
+					readURL(this);
+			});
+	});
+	</script>
+    
+</head>
+
+
+<body>
+	<!--wrap-->
+	<div class="wrap">
+	
+		<!--login-wrap-->
+		<div class="login-wrap join">
+
+			<!--group-top-->
+			<div class="group-top">
+                
+                <!--logo-wrap-->
+				<div class="logo-wrap">
+					<h1 class="logo"><a href="list.htm"><img src="resources/images/logo.png" alt="인스타그램" /></a></h1>
+					<span>친구들의 사진과 동영상을 보려면 가입하세요. </span>
+				</div>
+                <!-- //logo-wrap-->
+				
+				<!--profile-photo-->
+				<div class="profile-photo">
+					<div id="holder" style="display: none;"></div>
+                    <div class="file-group">
+					   <label class="" for="imgSelector"><img src="resources/images/ico-plus.png" alt="추가"></label>
+					   <input type="file" id="imgSelector" style="display: none"  />
+                    </div>
+				</div>
+                <!-- //profile-photo-->
+			
+				<input type="text" placeholder="이메일 주소" />
+				<input type="text" placeholder="성명" />
+				<input type="text" placeholder="비밀번호" />
+				<a href="#" class="button"> 가입 </a>
+			</div>
+			<!-- //group-top-->
+
+			<!--group-bottom-->
+			<div class="group-bottom">
+				계정이 있으신가요? <a href="login.htm" class="button">로그인</a>
+			</div>
+			<!-- //group-bottom-->
+
+		</div>
+		<!-- //login-wrap-->
+
+
+		<footer>@2022 Instagram from Meta</footer>
+
+	</div>
+	<!-- //wrap-->
+</body>
+</html>
