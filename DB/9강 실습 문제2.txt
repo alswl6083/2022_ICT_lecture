@@ -1,0 +1,30 @@
+9.
+delimiter //
+create trigger voucher_insert_history
+before insert 
+on voucher for each row
+begin 
+declare money int;
+set money = new.voucher_amount * 0.9;
+
+insert into voucher_history
+values(new.c_id,money,new.issue_date);
+end;//
+delimiter ;
+
+10.
+delimiter //
+create trigger voucher_insert_history2
+before insert
+on voucher for each row
+begin declare money int;
+set money = new.voucher_amount;
+
+if money > 100000 then
+ set money = new.voucher_amount * 0.9;
+end if;
+
+insert into voucher_history
+values(new.c_id,money,new.issue_date);
+end;//
+delimiter ;

@@ -1,0 +1,43 @@
+
+4.
+select sum(voucher_amount)
+from voucher
+where voucher_amount = (select min(voucher_amount) from voucher);
+
+5.
+select c_id, count(c_id)
+from voucher
+group by c_id
+order by count(c_id) desc;
+
+6.
+select level
+from customer
+group by level;
+
+7.
+select level, count(c_id)
+from customer
+group by level;
+
+8. 
+select age, count(age) as '명 수'
+from customer
+group by age
+having count(age) >= 2;
+
+9.
+select avg(age)
+from customer;
+
+10.
+select voucher_amount, count(voucher_amount)
+from voucher
+group by voucher_amount;
+
+11.
+select max(voucher_amount), min(voucher_amount),
+avg(voucher_amount),sum(voucher_amount)
+from voucher;
+
+

@@ -1,0 +1,89 @@
+1.
+delimiter //
+create function multiply(
+param1 int, param2 int)returns int
+begin
+declare result int;
+set result = param1 * param2;
+return result;
+end //
+delimiter ;
+
+2.
+delimiter //
+create function myname_customer(
+id int)returns varchar(20)
+begin
+declare result varchar(20);
+select c_name into result
+from customer
+where c_id = id;
+return result;
+end //
+delimiter ;
+
+
+3.
+delimiter //
+create function deptcount_emp(
+dept_name varchar(20))returns int
+begin
+declare result int;
+select count(*) into result
+from emp
+where dept_name = dept_nm;
+return result;
+end //
+delimiter ;
+
+4.
+select dept_nm '부서명', deptcount_emp(dept_nm) '인원수'
+from emp
+group by dept_nm;
+
+5.
+delimiter //
+create procedure alter_age(
+i_age int, i_name varchar(20))
+begin
+update customer 
+set age = i_age
+where i_name = c_name;
+end //
+delimiter ;
+
+6.
+delimiter //
+create procedure alter_zipcode(
+i_c_id int)
+begin
+update customer
+set zipcode = '00000'
+where i_c_id = c_id;
+end //
+delimiter ;
+
+7.
+delimiter //
+create procedure giftcard_50000(
+i_c_id int)
+begin
+declare id_count int;
+select count(*) into id_count from voucher where i_c_id = c_id;
+if id_count = 0 then
+insert into voucher(c_id, voucher_amount, issue_date)
+values(i_c_id, 50000, now());
+end if;
+end //
+delimiter ;
+
+8.
+delimiter //
+create procedure rebuild(
+)
+begin
+drop table dept_back;
+create table dept_back as select * from dept;
+end //
+delimiter ;
+

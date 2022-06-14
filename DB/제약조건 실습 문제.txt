@@ -1,0 +1,7 @@
+1.
+alter table emp modify column salary int default 2000000;
+2.
+alter table customer modify column level varchar(20) default 'GREEN';
+
+3.
+alter table emp modify column e_nm varchar(20) not null;

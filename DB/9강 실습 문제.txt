@@ -1,0 +1,32 @@
+delimiter //
+create trigger voucher_delete_before_history
+before delete
+on voucher for each row
+begin
+insert into voucher_history(idx, type, idate)
+values(old.c_id,'BEFORE DELETE',now());
+end; //
+delimiter ;
+
+delimiter //
+create trigger voucher_delete_after_history
+after delete
+on voucher for each row
+begin
+insert into voucher_history(idx, type, idate)
+values(old.c_id,'AFTER DELETE',now());
+end; //
+delimiter ;
+
+drop trigger voucher_delete_before_history;
+
+
+delimiter //
+create trigger customer_delete_history
+after delete
+on customer for each row
+begin
+insert into customer_backup
+values(old.c_id,old.c_name,old.c_mobile,old.level,old.zipcode,old.age);
+end; //
+delimiter ;

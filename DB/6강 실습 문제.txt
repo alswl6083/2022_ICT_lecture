@@ -1,0 +1,35 @@
+5
+select a.c_name, a.c_mobile,
+(select b.issue_date from voucher as b where a.c_id = b.c_id) as issue_date
+from customer as a
+where (select b.issue_date from voucher as b where a.c_id = b.c_id) is not null;
+
+6
+select a.c_name, a.c_mobile
+from customer as a
+where (select b.issue_date from voucher as b where a.c_id = b.c_id) is null;
+
+7
+select c_id, c_name, c_mobile, age, zipcode
+from customer
+order by c_name desc;
+
+8
+select c_id, c_name, c_mobile, age, zipcode
+from customer
+order by age asc;
+
+9
+select a.c_name, a.c_mobile
+from customer as a
+where (select b.issue_date from voucher as b where a.c_id = b.c_id) is null
+order by a.c_name desc;
+
+
+select c_id
+from voucher
+where voucher_amount>100000
+union
+select c_id
+from voucher
+where voucher_amount>100000;

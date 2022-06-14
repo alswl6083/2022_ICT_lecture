@@ -1,0 +1,24 @@
+2.
+select a.manf_nm, b.goods_nm, b.price
+from manufacturer as a
+inner join goods as b
+on a.manf_no = b.manf_no;
+3.
+select a.manf_nm, b.goods_nm, b.price, sum(quantity)
+from manufacturer as a
+inner join goods as b
+on a.manf_no = b.manf_no
+inner join sales as c
+on b.goods_no = c.goods_no
+group by a.manf_no, b.goods_no;
+
+4.
+select a.goods_nm, sum(a.price)
+from goods as a
+inner join sales as b
+on a.goods_no = b.goods_no
+group by b.goods_no;
+
+
+//where 문은 조건이 말이 안돼도 조건대로실행이된다.
+but group by절은 조건이 말이 안되면 실행이 되지 않는다. 
