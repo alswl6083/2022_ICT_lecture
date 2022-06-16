@@ -1,13 +1,33 @@
 5
 select a.c_name, a.c_mobile,
-(select b.issue_date from voucher as b where a.c_id = b.c_id) as issue_date
-from customer as a
-where (select b.issue_date from voucher as b where a.c_id = b.c_id) is not null;
+(select b.issue_date from work_user.voucher as b where a.c_id = b.c_id) as issue_date
+from work_user.customer as a
+where a.c_id in(select b.c_id from work_user.voucher as b);
+        0 < (select count(*) from work_user.voucher as b where a.c_id=b.c_id);
+
+--안됨.
+
+select a.c_name, a.c_mobile, b.issue_date
+from work_user.customer as a
+inner join work_user.voucher as b
+on a.c_id = b.c_id;
+
+
+
 
 6
 select a.c_name, a.c_mobile
-from customer as a
-where (select b.issue_date from voucher as b where a.c_id = b.c_id) is null;
+from work_user.customer as a
+where a.c_id not in(select b.c_id from voucher as b where a.c_id = b.c_id);
+
+--안됨.
+
+select a.c_name, a.c_mobile
+from work_user.customer as a
+left join work_user.voucher as b
+on a.c_id = b.c_id
+where b.c_id is null;
+
 
 7
 select c_id, c_name, c_mobile, age, zipcode

@@ -1,0 +1,12 @@
+3.
+create view v_amount as
+select a.c_name, a.c_mobile, a.age, sum(b.voucher_amount)
+from customer as a
+inner join voucher as b
+on a.c_id = b.c_id
+group by b.c_id;
+
+4.
+select * from v_inner_join as a
+left join voucher as b
+on a.c_id=b.c_id;
