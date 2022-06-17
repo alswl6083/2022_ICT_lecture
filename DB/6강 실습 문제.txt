@@ -3,9 +3,9 @@ select a.c_name, a.c_mobile,
 (select b.issue_date from work_user.voucher as b where a.c_id = b.c_id) as issue_date
 from work_user.customer as a
 where a.c_id in(select b.c_id from work_user.voucher as b);
-        0 < (select count(*) from work_user.voucher as b where a.c_id=b.c_id);
+        
 
---안됨.
+--안됨.(개수가많아지면서 select 말고 join으로 해야함)
 
 select a.c_name, a.c_mobile, b.issue_date
 from work_user.customer as a
@@ -19,7 +19,7 @@ on a.c_id = b.c_id;
 select a.c_name, a.c_mobile
 from work_user.customer as a
 where a.c_id not in(select b.c_id from voucher as b where a.c_id = b.c_id);
-
+	0 = (select count(*) from work_user.voucher as b where a.c_id=b.c_id);
 --안됨.
 
 select a.c_name, a.c_mobile
