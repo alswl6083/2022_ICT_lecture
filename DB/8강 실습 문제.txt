@@ -11,6 +11,24 @@ on a.manf_no = b.manf_no
 inner join sales as c
 on b.goods_no = c.goods_no
 group by a.manf_no, b.goods_no;
+------------------------------------
+(내가한거) 
+select a.goods_no,a.goods_nm,a.price,sum(c.quantity)
+from work_user.goods as a
+inner join work_user.manufacturer as b
+on a.manf_no = b.manf_no
+inner join work_user.sales as c
+on a.goods_no = c.goods_no
+group by c.goods_no;
+---------수량없는거, 제조사없는것까지 출력되게하려면 left join ↓
+select b.manf_nm, a.goods_no,a.goods_nm,a.price ,sum(c.quantity) as '판매수량'
+from work_user.goods as a
+left join work_user.manufacturer as b
+on a.manf_no = b.manf_no
+left join work_user.sales as c
+on a.goods_no = c.goods_no
+group by c.goods_no;
+
 
 4.
 select a.goods_nm, sum(a.price)
@@ -18,6 +36,13 @@ from goods as a
 inner join sales as b
 on a.goods_no = b.goods_no
 group by b.goods_no;
+-----------------------위에건 X
+(다시해본거)
+select a.goods_no, a.goods_nm, a.price * sum(b.quantity) as '가격 합계'
+from work_user.goods as a
+inner join work_user.sales as b
+on a.goods_no = b.goods_no
+group by a.goods_no;
 
 
 //where 문은 조건이 말이 안돼도 조건대로실행이된다.

@@ -1,0 +1,6 @@
+create table voucher(
+c_id int,
+voucher_amount double,
+issue_date timestamp
+,foreign key(c_id) references customer(c_id)
+);

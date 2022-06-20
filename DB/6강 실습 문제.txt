@@ -3,9 +3,9 @@ select a.c_name, a.c_mobile,
 (select b.issue_date from work_user.voucher as b where a.c_id = b.c_id) as issue_date
 from work_user.customer as a
 where a.c_id in(select b.c_id from work_user.voucher as b);
-        
+        0 < (select count(*) from work_user.voucher as b where a.c_id=b.c_id);
 
---안됨.(개수가많아지면서 select 말고 join으로 해야함)
+--안됨.
 
 select a.c_name, a.c_mobile, b.issue_date
 from work_user.customer as a
@@ -19,7 +19,7 @@ on a.c_id = b.c_id;
 select a.c_name, a.c_mobile
 from work_user.customer as a
 where a.c_id not in(select b.c_id from voucher as b where a.c_id = b.c_id);
-	0 = (select count(*) from work_user.voucher as b where a.c_id=b.c_id);
+
 --안됨.
 
 select a.c_name, a.c_mobile
@@ -53,3 +53,44 @@ union
 select c_id
 from voucher
 where voucher_amount>100000;
+
+
+
+---------------
+select * from work_user.customer order by c_name desc;
+select * from work_user.customer order by age asc;
+select * from work_user.customer order by c_name asc;
+select c_id from work_user.voucher 
+union
+select c_id from work_user.voucher;
+
+select c_id,'1번' from work_user.voucher
+union
+select c_id,'2번' from work_user.voucher;
+
+select c_id from work_user.voucher
+where voucher_amount > 100000
+union all
+select c_id from work_user.voucher
+where voucher_amount > 100000;
+
+select c_id,c_name from work_user.customer
+union all
+select c_id,c_name from work_user.customer;
+
+select c_id,c_name from work_user.customer
+union all
+select c_id,c_name from work_user.customer
+union all
+select c_id,c_name from work_user.customer;
+
+select c_name, age from work_user.customer
+where age > 30
+union 
+select c_name, age from work_user.customer
+where age < 30;
+
+select a.c_name, a.c_mobile, b.issue_date
+from work_user.customer as a
+inner join work_user.voucher as b
+on a.c_id = b.c_id;

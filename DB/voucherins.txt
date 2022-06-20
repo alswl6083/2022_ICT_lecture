@@ -1,0 +1,7 @@
+insert into voucher(c_id, voucher_amount, issue_date) values(1,100000,date_format('2022-01-01' , '%Y%m%d'));
+insert into voucher(c_id, voucher_amount, issue_date) values(2,50000,date_format('2022-04-01' , '%Y%m%d'));
+insert into voucher(c_id, voucher_amount, issue_date) values(5,200000,date_format('2022-04-22' , '%Y%m%d'));
+insert into voucher(c_id, voucher_amount, issue_date) values(12,100000,date_format('2022-04-22' , '%Y%m%d'));
+insert into voucher(c_id, voucher_amount, issue_date) values(14,50000,date_format('2022-05-02' , '%Y%m%d'));
+insert into voucher(c_id, voucher_amount, issue_date) values(6,50000,date_format('2022-05-21' , '%Y%m%d'));
+insert into voucher(c_id, voucher_amount, issue_date) values(18,50000,date_format('2022-05-22' , '%Y%m%d'));

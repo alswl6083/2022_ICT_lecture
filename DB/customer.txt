@@ -1,0 +1,9 @@
+create table customer ( 
+c_id int, 
+c_name varchar(20),
+c_mobile varchar(13),
+level varchar(10),
+zipcode varchar(5),
+age int
+,primary key (c_id)
+);					
