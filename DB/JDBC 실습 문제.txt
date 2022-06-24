@@ -1,0 +1,5 @@
+
+실습 12. // not java버전
+
+UPDATE dept AS a
+SET emp_cnt = (SELECT COUNT(*) FROM emp AS b WHERE a.dept_no = b.dept_no);
