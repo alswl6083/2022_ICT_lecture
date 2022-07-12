@@ -1,0 +1,31 @@
+//설정
+bean
+component
+configuration
+//기능
+[controller(view) <==> responsebody] ==  restcontroller(data[json/xml 데이터 형식]) 
+service
+( repository / mapper ) == DAO
+
+====> spring context =====> springbootapplication [ configuration, coponentscan, enableautoconfiguration]
+
+위에 spring context를 가져와 쓰려면 
+autowired ==> [configuration X, bean도 잘 X]  autowired로 내려받는것들은 service단에서 controller, repository/mapper에서 service
+ResponseBody 
+
+RequestHeader
+	Attribute
+	Part
+	Body
+	Param(하나의 속성)
+ModelAttribute(하나의 객체)
+
+
+RequestMapping[GetMapping,post	,put	,delete	]
+
+//기타
+value(properties에서 데이터얻어올때 사용)
+cookievalue
+scheduled
+
+
