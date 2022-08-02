@@ -1,0 +1,91 @@
+문제1 
+DB라는 유저를 추가하고 
+비밀번호를 1234 로 변경하십시오.
+
+
+문제2
+DB라는 유저로 변경후 /home 으로
+ 이동후 경로를 출력하십시오
+
+
+문제3
+최상위 위치로 돌아간뒤 /home/DB 
+sample라는 폴더를 만들고 속성(권한)값을
+rw-rw-r-- 으로 변경하시오.
+
+
+문제4
+그룹 naver 를 만들고  유저 
+developer1,developer2 를 추가하시오.
+
+
+문제5
+developer1 유저로 속성(권한)값이 
+r--rw-r-x 인 test 폴더를 만들고(최상위 위치에) 
+그룹을 naver로 변경하시오.
+
+
+문제6. 
+폴더를 지우고 싶은데 삭제가 안된다. 
+그이유는? (사용한 명령어는 rmdir 이였다.)
+
+
+문제7.
+pwd 명령어를 실행하니 현재 위치가 ~ 엿다 /home/DB/sample의 data 파일의 행번호를 붙여서 출력하는 명령어는?
+
+
+문제8
+현재 디렉터리에 있는 파일명의 확장자가 java인 모든파일을 /tmp로 복사하시오.
+
+1.
+useradd DB
+passwd DB
+1234
+
+2.
+su - DB
+cd /home
+pwd
+
+3.
+cd /home/DB
+mkdir sample
+chmod 664 sample
+
+4.
+groupadd naver
+useradd developer1
+useradd developer2
+usermod -g naver developer1
+usermod -g naver developer2
+
+-----
+gpasswd -a developer1 naver
+gpasswd -a developer2 naver
+
+5. 
+
+su - developer1
+cd ~
+mkdir test
+chmod 465 test
+exit
+cd /home/developer1
+chown developer1:naver test
+
+6.
+
+1.하위 디렉토리가 남아있기 때문에
+2.권한이 없기 때문에
+
+7. 
+
+cat -n /home/DB/sample/data
+-------
+wc -l /home/DB/sample/data
+
+8.
+cp *.java /tmp 
+
+
+
