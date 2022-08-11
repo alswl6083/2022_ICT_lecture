@@ -1,0 +1,91 @@
+====MySQL설치==================
+
+//mysql설치 되어있는지 확인
+yum list installed | grep mysql
+
+//mysql 삭제
+yum remove ~
+rm -rf /var/lib/mysql
+
+//yum respository 등록
+yum install -y https://dev.mysql.com/get/mysql80-community-release-el7-5.noarch.rpm
+
+//yum respository 등록 확인
+yum repolist enabled | grep "mysql.*"
+
+//8버전 mysql 설치
+yum install -y mysql-server
+
+//설치된 mysql 버전 확인
+mysqld -V
+
+//재부팅 시 자동으로 실행되도록 변경
+systemctl enable mysqld
+
+//mysql 실행
+systemctl start mysqld
+
+//실행 중인지 확인
+systemctl status mysqld
+
+//임시 비밀번호 확인
+grep "temporary password" /var/log/mysqld.log
+#TOEqN)o.1f-
+
+//mysql root 계정 접속
+mysql -u root -p
+
+//비밀번호 변경
+alter user 'root'@'localhost' identified by "비밀번호";
+ == > Nn@@@000
+
+//외부 접속 허용 
+use mysql;
+select host, user from user;
+create user 'root'@'192.168.56.1' identified by "Nn@@@000";
+grant all privileges on *.* to 'root'@'192.168.56.1';
+
+1.218.82.203 => 공인 아이피
+create user 'root'@'1.218.82.203' identified by "Nn@@@000";
+grant all privileges on *.* to 'root'@'1.218.82.203';
+
+flush privileges;
+
+//mysql
+
+vi /etc/my.cnf
+
+[마지막에 추가]
+====================
+[client]
+default-character-set = utf8mb4
+
+[mysql]
+default-character-set = utf8mb4
+
+[mysqld]
+character-set-client-handshake = FALSE
+character-set-server = utf8mb4
+collation-server = utf8mb4_unicode_ci
+=======================
+
+//재기동
+systemctl restart mysqld
+
+mysql -u root -p
+
+status
+
+자바 환경변수
+C:/Program Files/Java/jre1.8.0_341
+C:\Program Files\ojdkbuild\java-1.8.0-openjdk-1.8.0.322-1
+
+
+==========spring 터미널에서 프로젝트 옮기는법=============
+
+cd /usr/local/apache-tomcat-8.5.69/webapps/
+rm -rf ROOT/
+pwd
+//pwd복사해서
+ROOT.war 드래그해서 pwd붙여넣기
+jar xvf ROOT.war //압축풀기
